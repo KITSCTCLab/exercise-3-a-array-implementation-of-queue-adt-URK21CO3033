@@ -111,3 +111,21 @@ solution = Solution(length_of_text)
 for index in range(length_of_text):
     solution.push_character(text[index])
     solution.enqueue_character(text[index])
+
+is_palindrome = True
+'''
+pop the top character from stack
+dequeue the first character from queue
+compare both characters
+If the comparison fails, set is_palindrome as False.
+'''
+for index in range(length_of_text):
+    if solution.pop_character() != solution.dequeue_character():
+        is_palindrome = False
+
+
+# finally print whether string text is palindrome or not.
+if is_palindrome:
+    print("The word, " + text + ", is a palindrome.")
+else:
+    print("The word, " + text + ", is not a palindrome.")
